@@ -1,4 +1,4 @@
-package com.example.netologyhibernate;
+package com.example.netologyhibernate.service;
 
 import com.example.netologyhibernate.entity.Role;
 import com.example.netologyhibernate.entity.User;

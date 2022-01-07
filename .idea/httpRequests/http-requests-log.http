@@ -1,3 +1,502 @@
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter3",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter3",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T205244.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T205237.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T204723.400.json
+
+###
+
+GET http://localhost:8080/persons
+
+<> 2021-12-12T204654.200.html
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Moscow
+
+<> 2021-12-12T204652.200.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T204633.400.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T204559.400.json
+
+###
+
+POST http://localhost:8080/registration
+
+<> 2021-12-12T204209.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T204108.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T204045.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T204002.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T203816.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T203653.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T203611.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T203507.403.json
+
+###
+
+GET http://localhost:8080/persons
+
+<> 2021-12-12T203335.200.html
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Moscow
+
+<> 2021-12-12T203332.200.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "$2a$10$pgirrhWY8OUcmbuAdiuE4OsGjGo.RHyn19kqjS/cJpZPpzx48z8Zu",
+"passwordConfirm": "$2a$10$pgirrhWY8OUcmbuAdiuE4OsGjGo.RHyn19kqjS/cJpZPpzx48z8Zu"
+}
+
+<> 2021-12-12T203249.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter2",
+"password": "$2a$10$pgirrhWY8OUcmbuAdiuE4OsGjGo.RHyn19kqjS/cJpZPpzx48z8Zu",
+"passwordConfirm": "$2a$10$pgirrhWY8OUcmbuAdiuE4OsGjGo.RHyn19kqjS/cJpZPpzx48z8Zu"
+}
+
+<> 2021-12-12T203213.403.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Moscow
+
+<> 2021-12-12T201806.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T201522.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T195014.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T194933.200.html
+
+###
+
+GET http://localhost:8080/persons
+
+<> 2021-12-12T194915.200.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T194817.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T194527.403.json
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T194411.200.html
+
+###
+
+POST http://localhost:8080/persons/registration
+
+<> 2021-12-12T194308.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T194139.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T193945.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="username"
+Content-Type: text/plain
+
+username
+--WebAppBoundary
+Content-Disposition: form-data; name="password"
+Content-Type: text/plain
+
+password
+--WebAppBoundary
+Content-Disposition: form-data; name="passwordConfirm"
+Content-Type: text/plain
+
+password
+--WebAppBoundary--
+
+<> 2021-12-12T193303.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="username"
+Content-Type: text/plain
+
+username
+--WebAppBoundary
+Content-Disposition: form-data; name="password"
+Content-Type: text/plain
+
+password
+--WebAppBoundary
+Content-Disposition: form-data; name="passwordConfirm"
+Content-Type: text/plain
+
+password
+--WebAppBoundary--
+
+<> 2021-12-12T193235.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: 'application/json'
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T192856.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: 'application/json'
+{:
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}:
+
+<> 2021-12-12T192850.400.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: 'application/json'
+{:
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}:
+
+<> 2021-12-12T192831.400.html
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Moscow
+
+<> 2021-12-12T192818.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: 'application/json'
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T192710.200.html
+
+###
+
+POST http://localhost:8080/registration
+Content-Type: 'application/json'
+
+{
+"username": "Peter",
+"password": "asddsa",
+"passwordConfirm": "asddsa"
+}
+
+<> 2021-12-12T192557.200.html
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Moscow
+
+###
+
 GET http://localhost:8080/persons/by-name-and-surname?name=Ivan&surname=sss
 
 <> 2021-12-11T121935.200.json
@@ -37,114 +536,6 @@ GET http://localhost:8080/persons/by-city?city=Moscow
 GET http://localhost:8080/persons/by-name-and-surname?name=Ivan&surname=sss
 
 <> 2021-12-11T121427.200.json
-
-###
-
-GET http://localhost:8080/persons/by-name-and-surname?nmae=Ivan&surname=sss
-
-<> 2021-12-11T121355.400.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow1
-
-<> 2021-12-11T120904.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=10
-
-<> 2021-12-11T120848.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=12
-
-<> 2021-12-11T120843.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=12
-
-<> 2021-12-11T120451.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=11
-
-<> 2021-12-11T120446.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=11
-
-<> 2021-12-11T120329.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=12
-
-<> 2021-12-11T120316.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-11T115020.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-11T114541.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T234904.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T234627.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T234309.500.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T234239.500.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T234156.500.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T234108.500.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T234028.404.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-10T233931.404.json
 
 ###
 

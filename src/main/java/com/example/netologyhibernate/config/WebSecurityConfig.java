@@ -1,6 +1,6 @@
 package com.example.netologyhibernate.config;
 
-import com.example.netologyhibernate.UserService;
+import com.example.netologyhibernate.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -28,9 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/registration").anonymous()
-                .antMatchers("/persons").authenticated()
-                .antMatchers("/persons/by-city").permitAll()
+                .antMatchers("/*").authenticated()
+                .antMatchers("/login").permitAll()
                 .and()
                 .formLogin();
     }
