@@ -1,13 +1,17 @@
 package com.example.netologyhibernate.api;
 
+import com.example.netologyhibernate.dto.FileDto;
 import com.example.netologyhibernate.dto.request.FilenameUpdateDto;
+import com.example.netologyhibernate.service.FileService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotNull;
+import java.io.IOException;
 
 /**
  * @author Igor Khristiuk on 07.01.2022
@@ -17,38 +21,43 @@ import javax.validation.constraints.NotNull;
 @RequestMapping("/file")
 @RequiredArgsConstructor
 public class FileController {
+    private final FileService fileService;
 
-    @GetMapping
-    public ResponseEntity getFile(@RequestParam String filename) {
+    @GetMapping()
+    public ResponseEntity<Resource> getFile(@RequestParam String filename) {
+        FileDto file = fileService.getFile(filename);
 
-        //TODO: get file
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Content-Disposition", "attachment;filename=".concat(filename));
+        httpHeaders.add("Access-Control-Expose-Headers", "Content-Disposition");
 
-        return ResponseEntity.ok().body(null);
+        return ResponseEntity.ok().headers(httpHeaders).body(file.getFile().getResource());
     }
 
     @PostMapping(
             consumes = {MediaType.MULTIPART_FORM_DATA_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity uploadFile(@RequestParam String filename, @RequestBody MultipartFile file) {
+    public ResponseEntity uploadFile(@RequestParam String filename, FileDto file) {
 
-        //TODO: upload
+        //TODO: create informative exception
+        try {
+            fileService.save(filename, file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return ResponseEntity.ok().build();
     }
 
     @PutMapping
     public ResponseEntity updateFile(@RequestParam String filename, @RequestBody FilenameUpdateDto dto) {
-
-        //TODO: update name
-
-        return ResponseEntity.ok().body(null);
+        fileService.updateFilename(filename, dto);
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping
     public ResponseEntity deleteFile(@RequestParam @NotNull String filename) {
-
-        //TODO: delete
-
-        return ResponseEntity.ok().body(null);
+        fileService.deleteFile(filename);
+        return ResponseEntity.ok().build();
     }
 }

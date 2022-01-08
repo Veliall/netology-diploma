@@ -1,3 +1,153 @@
+POST http://localhost:8080/file?filename=test
+Content-Type: multipart/form-data; boundary=--qwer
+
+--qwer
+Content-Disposition: form-data; name="hash"
+
+hash
+--qwer
+Content-Disposition: form-data; name="file"; filename="small-jpg-image.webp"
+Content-Type: application/octet-stream
+
+d0 bf d1 80 d0 b8 d0 b2 d0 b5 d1 82
+--qwer--
+
+<> 2022-01-08T025148.400.json
+
+###
+
+POST http://localhost:8080/file?filename=test
+Content-Type: multipart/form-data; boundary=--qwer
+
+--qwer
+Content-Disposition: form-data; name="hash"
+
+hash
+--qwer
+Content-Disposition: form-data; name="file"; filename="small-jpg-image.webp"
+Content-Type: application/octet-stream
+
+d0 bf d1 80 d0 b8 d0 b2 d0 b5 d1 82
+--qwer--
+
+<> 2022-01-08T024743.400.json
+
+###
+
+POST http://localhost:8080/file?filename=test
+Content-Type: multipart/form-data; boundary=--qwer
+
+--qwer
+Content-Disposition: form-data; name="hash"
+
+hash
+--qwer
+Content-Disposition: form-data; name="file"; filename="small-jpg-image.webp"
+Content-Type: application/octet-stream
+
+d0 bf d1 80 d0 b8 d0 b2 d0 b5 d1 82
+--qwer--
+
+<> 2022-01-08T024647.400.json
+
+###
+
+POST http://localhost:8080/file?filename=test
+Content-Type: multipart/form-data; boundary=--qwer
+
+--qwer
+Content-Disposition: form-data; name="hash"
+
+hash
+--qwer
+Content-Disposition: form-data; name="file"; filename="small-jpg-image.webp"
+Content-Type: application/octet-stream
+
+--qwer--
+
+<> 2022-01-08T024459.400.json
+
+###
+
+POST http://localhost:8080/file
+Content-Type: multipart/form-data; boundary=--qwer
+
+--qwer
+Content-Disposition: form-data; name="hash"
+
+hash
+--qwer
+Content-Disposition: form-data; name="file"; filename="small-jpg-image.webp"
+Content-Type: application/octet-stream
+
+--qwer--
+
+<> 2022-01-08T024413.400.json
+
+###
+
+POST http://localhost:8080/file
+Content-Type: multipart/form-data; boundary=--qwer
+
+--qwer
+Content-Disposition: form-data; name="hash"
+
+hash
+--qwer
+Content-Disposition: form-data; name="file"; filename="small-jpg-image.webp"
+Content-Type: application/octet-stream
+
+--qwer--
+
+###
+
+POST http://localhost:8080/file
+Content-Type: multipart/form-data
+
+<> 2022-01-08T023937.500.json
+
+###
+
+POST http://localhost:8080/file
+
+<> 2022-01-08T023909.415.json
+
+###
+
+POST http://localhost:8080/file
+
+###
+
+POST http://localhost:8080/signin
+Content-Type: application/json
+
+{
+  "login": "Peter2",
+  "password": "asddsa"
+}
+
+<> 2022-01-08T023703.200.html
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "login": "Peter2",
+  "password": "asddsa"
+}
+
+<> 2022-01-08T023645.200.html
+
+###
+
+POST http://localhost:8080/file
+
+<> 2022-01-08T023500.200.html
+
+###
+
 POST http://localhost:8080/registration
 Content-Type: application/json
 
@@ -446,96 +596,6 @@ Content-Type: 'application/json'
 }:
 
 <> 2021-12-12T192850.400.html
-
-###
-
-POST http://localhost:8080/registration
-Content-Type: 'application/json'
-{:
-"username": "Peter",
-"password": "asddsa",
-"passwordConfirm": "asddsa"
-}:
-
-<> 2021-12-12T192831.400.html
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-12T192818.200.html
-
-###
-
-POST http://localhost:8080/registration
-Content-Type: 'application/json'
-
-{
-"username": "Peter",
-"password": "asddsa",
-"passwordConfirm": "asddsa"
-}
-
-<> 2021-12-12T192710.200.html
-
-###
-
-POST http://localhost:8080/registration
-Content-Type: 'application/json'
-
-{
-"username": "Peter",
-"password": "asddsa",
-"passwordConfirm": "asddsa"
-}
-
-<> 2021-12-12T192557.200.html
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-###
-
-GET http://localhost:8080/persons/by-name-and-surname?name=Ivan&surname=sss
-
-<> 2021-12-11T121935.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=12
-
-<> 2021-12-11T121933.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscowa
-
-<> 2021-12-11T121928.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-11T121923.200.json
-
-###
-
-GET http://localhost:8080/persons/by-age?age=12
-
-<> 2021-12-11T121650.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Moscow
-
-<> 2021-12-11T121644.500.json
-
-###
-
-GET http://localhost:8080/persons/by-name-and-surname?name=Ivan&surname=sss
-
-<> 2021-12-11T121427.200.json
 
 ###
 
