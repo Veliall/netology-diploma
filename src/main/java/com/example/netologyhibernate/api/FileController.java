@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
-import java.io.IOException;
 
 /**
  * @author Igor Khristiuk on 07.01.2022
@@ -38,14 +37,7 @@ public class FileController {
             consumes = {MediaType.MULTIPART_FORM_DATA_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity uploadFile(@RequestParam String filename, FileDto file) {
-
-        //TODO: create informative exception
-        try {
-            fileService.save(filename, file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        fileService.save(filename, file);
         return ResponseEntity.ok().build();
     }
 

@@ -9,6 +9,7 @@ import com.example.netologyhibernate.repository.FileRepo;
 import jdk.jfr.ContentType;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,11 +26,17 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class FileService {
     private final FileRepo fileRepo;
 
-    public void save(String filename, FileDto dto) throws IOException {
-        fileRepo.save(new FileEntity(filename, dto.getHash(), dto.getFile().getBytes()));
+    public void save(String filename, FileDto dto) {
+        try {
+            byte[] file = dto.getFile().getBytes();
+            fileRepo.save(new FileEntity(filename, dto.getHash(), file));
+        } catch (Exception e) {
+            throw new AppException(e.getMessage());
+        }
     }
 
     @SneakyThrows
