@@ -1,6 +1,5 @@
 package com.example.netologyhibernate.api;
 
-import com.example.netologyhibernate.dto.FileDto;
 import com.example.netologyhibernate.dto.response.FileListResponseDto;
 import com.example.netologyhibernate.service.FileService;
 import lombok.RequiredArgsConstructor;
