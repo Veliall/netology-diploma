@@ -1,24 +1,27 @@
 package com.example.netologyhibernate.service;
 
-import ch.qos.logback.core.util.ContentTypeUtil;
 import com.example.netologyhibernate.dto.FileDto;
 import com.example.netologyhibernate.dto.request.FilenameUpdateDto;
+import com.example.netologyhibernate.dto.response.FileListResponseDto;
 import com.example.netologyhibernate.entity.FileEntity;
 import com.example.netologyhibernate.excteption.AppException;
 import com.example.netologyhibernate.repository.FileRepo;
-import jdk.jfr.ContentType;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * @author Igor Khristiuk on 08.01.2022
@@ -33,7 +36,8 @@ public class FileService {
     public void save(String filename, FileDto dto) {
         try {
             byte[] file = dto.getFile().getBytes();
-            fileRepo.save(new FileEntity(filename, dto.getHash(), file));
+            Long size = dto.getFile().getSize();
+            fileRepo.save(new FileEntity(filename, dto.getHash(), file, size));
         } catch (Exception e) {
             throw new AppException(e.getMessage());
         }
@@ -63,5 +67,17 @@ public class FileService {
     @Transactional
     public void updateFilename(String filename, FilenameUpdateDto dto) {
         fileRepo.updateFilename(filename, dto.getFilename());
+    }
+
+    public List<FileListResponseDto> getList(Integer limit) {
+        Pageable pageable = PageRequest.of(0, limit);
+        Page<FileEntity> entityPage = fileRepo.findAll(pageable);
+        return convertToDto(entityPage);
+    }
+
+    private List<FileListResponseDto> convertToDto(Page<FileEntity> entityPage) {
+        return entityPage.stream()
+                .map(o -> new FileListResponseDto(o.getFilename(), o.getSize()))
+                .collect(Collectors.toList());
     }
 }

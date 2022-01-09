@@ -21,10 +21,12 @@ public class FileEntity {
     private String filename;
     private String hash;
     private byte[] file;
+    private Long size;
 
-    public FileEntity(String filename, String hash, byte[] file) {
+    public FileEntity(String filename, String hash, byte[] file, Long size) {
         this.filename = filename;
         this.hash = hash;
         this.file = file;
+        this.size = size;
     }
 }
