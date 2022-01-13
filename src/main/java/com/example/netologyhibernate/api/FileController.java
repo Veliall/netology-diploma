@@ -1,11 +1,11 @@
 package com.example.netologyhibernate.api;
 
-import com.example.netologyhibernate.dto.FileDto;
+import com.example.netologyhibernate.dto.request.FileDto;
 import com.example.netologyhibernate.dto.request.FilenameUpdateDto;
 import com.example.netologyhibernate.service.FileService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,13 +24,8 @@ public class FileController {
 
     @GetMapping()
     public ResponseEntity<Resource> getFile(@RequestParam String filename) {
-        FileDto file = fileService.getFile(filename);
-
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("Content-Disposition", "attachment;filename=".concat(filename));
-        httpHeaders.add("Access-Control-Expose-Headers", "Content-Disposition");
-
-        return ResponseEntity.ok().headers(httpHeaders).body(file.getFile().getResource());
+        byte[] file = fileService.getFile(filename);
+        return ResponseEntity.ok().body(new ByteArrayResource(file));
     }
 
     @PostMapping(

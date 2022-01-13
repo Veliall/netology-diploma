@@ -1,24 +1,19 @@
 package com.example.netologyhibernate.service;
 
-import com.example.netologyhibernate.dto.FileDto;
+import com.example.netologyhibernate.dto.request.FileDto;
 import com.example.netologyhibernate.dto.request.FilenameUpdateDto;
 import com.example.netologyhibernate.dto.response.FileListResponseDto;
 import com.example.netologyhibernate.entity.FileEntity;
 import com.example.netologyhibernate.excteption.AppException;
 import com.example.netologyhibernate.repository.FileRepo;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -43,17 +38,11 @@ public class FileService {
         }
     }
 
-    @SneakyThrows
-    public FileDto getFile(String filename) {
+    public byte[] getFile(String filename) {
         Optional<FileEntity> entity = fileRepo.findByFilename(filename);
-        FileDto dto = new FileDto();
         if (entity.isPresent()) {
             FileEntity fileEntity = entity.get();
-            InputStream inputStream = new ByteArrayInputStream(fileEntity.getFile());
-            MultipartFile file = new MockMultipartFile(fileEntity.getFilename(), filename, "application octet stream", inputStream);
-            dto.setHash(fileEntity.getHash());
-            dto.setFile(file);
-            return dto;
+            return fileEntity.getFile();
         } else {
             throw new AppException("File with this name doesn't exist");
         }

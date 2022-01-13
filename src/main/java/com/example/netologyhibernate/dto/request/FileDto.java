@@ -1,4 +1,4 @@
-package com.example.netologyhibernate.dto;
+package com.example.netologyhibernate.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
