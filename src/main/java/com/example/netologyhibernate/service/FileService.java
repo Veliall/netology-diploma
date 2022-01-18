@@ -28,11 +28,11 @@ import java.util.stream.Collectors;
 public class FileService {
     private final FileRepo fileRepo;
 
-    public void save(String filename, FileDto dto) {
+    public FileEntity save(String filename, FileDto dto) {
         try {
             byte[] file = dto.getFile().getBytes();
             Long size = dto.getFile().getSize();
-            fileRepo.save(new FileEntity(filename, dto.getHash(), file, size));
+            return fileRepo.save(new FileEntity(filename, dto.getHash(), file, size));
         } catch (Exception e) {
             throw new AppException(e.getMessage());
         }
@@ -54,8 +54,14 @@ public class FileService {
     }
 
     @Transactional
-    public void updateFilename(String filename, FilenameUpdateDto dto) {
-        fileRepo.updateFilename(filename, dto.getFilename());
+    public Optional<FileEntity> updateFilename(String filename, FilenameUpdateDto dto) {
+        Optional<FileEntity> fileEntity = fileRepo.updateFilename(filename, dto.getFilename());
+        if (fileEntity.isPresent()) {
+            return fileEntity;
+        } else {
+            throw new AppException("File with this name doesn't exist");
+        }
+
     }
 
     public List<FileListResponseDto> getList(Integer limit) {

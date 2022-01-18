@@ -20,5 +20,5 @@ public interface FileRepo extends JpaRepository<FileEntity, Long> {
 
     @Modifying
     @Query("UPDATE files f SET f.filename = :newName WHERE f.filename = :filename")
-    void updateFilename(@Param(value = "filename") String filename, @Param(value = "newName") String newName);
+    Optional<FileEntity> updateFilename(@Param(value = "filename") String filename, @Param(value = "newName") String newName);
 }
