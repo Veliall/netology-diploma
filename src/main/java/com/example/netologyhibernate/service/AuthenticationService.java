@@ -4,6 +4,7 @@ import com.example.netologyhibernate.dto.request.LoginRequestDto;
 import com.example.netologyhibernate.dto.response.LoginResponseDto;
 import com.example.netologyhibernate.security.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,6 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenUtil jwtTokenUtil;
@@ -31,13 +33,14 @@ public class AuthenticationService {
         final UserDetails userDetails = userService.loadUserByUsername(username);
         final String token = jwtTokenUtil.generateToken(userDetails);
         TOKENS.put(token, username);
+        log.info("User " + username + " login");
         return new LoginResponseDto(token);
     }
 
     public void logout(String authToken) {
         final String token = authToken.substring(7);
         final String username = TOKENS.get(token);
-        System.out.println("User " + username + " logout. JWT is disabled.");
+        log.info("User " + username + " logout. JWT is disabled.");
         TOKENS.remove(token);
     }
 }
