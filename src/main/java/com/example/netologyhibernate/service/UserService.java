@@ -1,6 +1,5 @@
 package com.example.netologyhibernate.service;
 
-import com.example.netologyhibernate.entity.Role;
 import com.example.netologyhibernate.entity.User;
 import com.example.netologyhibernate.repository.UsersRepo;
 import lombok.AllArgsConstructor;
@@ -31,18 +30,5 @@ public class UserService implements UserDetailsService {
         }
 
         return user;
-    }
-
-    public boolean saveUser(User user) {
-        User userFromDB = usersRepo.findByUsername(user.getUsername());
-
-        if (userFromDB != null) {
-            return false;
-        }
-
-        user.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        usersRepo.save(user);
-        return true;
     }
 }

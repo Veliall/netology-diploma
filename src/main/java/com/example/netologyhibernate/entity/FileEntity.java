@@ -1,10 +1,12 @@
 package com.example.netologyhibernate.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * @author Igor Khristiuk on 08.01.2022
@@ -13,22 +15,20 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class FileEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(unique = true)
     private String filename;
-    private String hash;
+
+    @Column(nullable = false)
+    private LocalDateTime date;
+    @Lob
     private byte[] file;
     private Long size;
 
-    public FileEntity(String filename, String hash, byte[] file, Long size) {
-        this.filename = filename;
-        this.hash = hash;
-        this.file = file;
-        this.size = size;
-    }
+    @ManyToOne
+    private User user;
+
 }
