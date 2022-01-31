@@ -1,6 +1,5 @@
 package com.example.netologyhibernate.service;
 
-import com.example.netologyhibernate.excteption.AppException;
 import com.example.netologyhibernate.repository.UsersRepo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
